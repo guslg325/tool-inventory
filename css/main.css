@@ -1,0 +1,23 @@
+body{
+	color: white;
+	font-size: medium;
+}
+
+.title{
+	margin-left: 12pt;
+	font-size: large;
+}
+
+.tool-img{
+	margin-left: 12pt;
+	margin-top: 12pt;
+}
+
+.backBtn{
+	margin-left: 5pt;
+	margin-right: 10pt;
+}
+
+.mainDiv{
+	margin-top: 40pt;
+}
