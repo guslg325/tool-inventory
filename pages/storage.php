@@ -78,7 +78,7 @@
 				if($cards != "")
 					echo $cards;
 				else
-					echo "<center><h6>No hay elementos para mostrar.</h6></center>";
+					echo "<center>&nbsp<h6>No hay elementos para mostrar.</h6></center>";
 			?>
 		</div>
 		<!--Floating action button-->
