@@ -90,7 +90,7 @@
 	</header>
 	<main class="mainDiv">
 		<div class="container">
-			<form name="formAddTool" id="formAddTool">
+			<form enctype="multipart/form-data" name="formAddTool" id="formAddTool">
 				<div class="row">
 					<div class="input-field col s12">
 						<input class="white-text" id="toolName" name="toolName" type="text" class="validate" value="<?php echo $toolName?>" data-validetta="required">
@@ -119,6 +119,7 @@
 					<div class="file-field input-field">
 						<div class="btn grey darken-3">
 							<span><i class="fas fa-file"></i></span>
+							<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 							<input type="file" name="photo" id="photo" data-validetta="required">
 						</div>
 						<div class="file-path-wrapper">
