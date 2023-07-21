@@ -19,7 +19,7 @@ $(document).ready(function(){
 			event.preventDefault();
 			var formData = new FormData($("form#formUpdateTool")[0]);
 			$.ajax({
-				url:"./addTool_AX.php",
+				url:"./updateTool_AX.php",
                 method:"post",
                 data:formData,
                 cache:false,

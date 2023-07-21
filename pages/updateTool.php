@@ -56,7 +56,7 @@
 		$cabID = $_GET["cabID"];
 		$toolName = $_GET["toolName"];
 
-		$connection = mysqli_connect("localhost","root","","db_toolinventory");
+		$connection = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 		$sql = "SELECT * FROM tool WHERE ID_Tool = $toolID";
 		$result = mysqli_query($connection,$sql);
 
@@ -185,7 +185,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<button type="submit" class="btn grey darken-3" style="width: 100%;">Agregar</button>
+					<button type="submit" class="btn grey darken-3" style="width: 100%;">Actualizar</button>
 				</div>
 			</form>
 		</div>
