@@ -9,9 +9,15 @@
 		$details = $_POST["storageDescription"];
 		$photo = $_FILES["photo"];
 
+		//Get consecutive number for img
+		$connection = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+		$sql = "SELECT MAX(ID_URL) FROM imageurl";
+		$result = mysqli_query($connection,$sql);
+		$consecutive = mysqli_fetch_array($result,2);
+
 		//Save img
 		$dirUploads = "./../files/";//Save on this dir
-		$photoURL = $dirUploads.$photo["name"];//dir+filename
+		$photoURL = $dirUploads."ST-".($consecutive[0]+1);//dir+consecutive
 
 		if(move_uploaded_file($photo["tmp_name"],$photoURL)){
 			//Add URL to DB

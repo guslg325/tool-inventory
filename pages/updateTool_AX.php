@@ -11,9 +11,15 @@
 		$description = $_POST["toolDescription"];
 		$photo = $_FILES["photo"];
 
+		//Get consecutive number for img
+		$connection = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+		$sql = "SELECT MAX(ID_URL) FROM imageurl";
+		$result = mysqli_query($connection,$sql);
+		$consecutive = mysqli_fetch_array($result,2);
+
 		//Save img
-		$dirUploads = "./../files/";
-		$photoURL = $dirUploads.$photo["name"];
+		$dirUploads = "./../files/";//Save on this dir
+		$photoURL = $dirUploads."TO-".($consecutive[0]+1);//dir+consecutive
 		if(move_uploaded_file($photo["tmp_name"],$photoURL)){
 			//Add URL to DB
 			$connection = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
